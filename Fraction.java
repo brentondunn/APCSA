@@ -1,3 +1,9 @@
+/*
+name: Brenton Dunn and Aman Kumar
+ID #: 218005 and 218xxx
+date of completion: 24/08/2020
+*/
+
 public class Fraction {
 
     private int numerator;
