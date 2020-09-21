@@ -26,7 +26,7 @@ public class Fraction {
 
     public String subtract(Fraction fraction2) {
         int top = (numerator * fraction2.getDenominator()) - (fraction2.getNumerator() * denominator);
-        int bottom = denominator * fraction2.denominator();
+        int bottom = denominator * fraction2.getDenominator();
         String strTop = Integer.toString(top);
         String strBottom = Integer.toString(bottom);
         return strTop + '/' + strBottom;
