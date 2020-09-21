@@ -52,12 +52,5 @@ public class Fraction {
         String strTop = Integer.toString(top);
         String strBottom = Integer.toString(bottom);
         return strTop + '/' + strBottom;
-    }
-
-    public static void main(String[] args) {
-        //raction f = new Fraction(2, 5);
-        //Fraction g = new Fraction(4, 3);
-        //System.out.println(f.add(g));
-        //System.out.println("hello world");
-    }
+    }    
 }
