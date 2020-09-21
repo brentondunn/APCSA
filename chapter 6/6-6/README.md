@@ -3,4 +3,4 @@ Brenton Dunn and Aman Kumar <br>
 24/08/2020
 
 # Screenshots: 
-![](images/chapter%206/6-6.png)
+![](images/image1.png)
