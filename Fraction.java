@@ -1,54 +1,57 @@
 public class Fraction {
-    
+
     private int numerator;
     private int denominator;
-
 
     public Fraction(int n, int d) {
         numerator = n;
         denominator = d;
     }
 
-    public int numerator() {
+    public int getNumerator() {
         return numerator;
     }
 
-    public int denominator() {
+    public int getDenominator() {
         return denominator;
     }
 
-    public String add() {
-        //double fracTop = (double)(numerator1 * denominator2) + (numerator2 * denominator1);
-        //return f.toString()
-
+    public String add(Fraction fraction2) {
+        int top = (numerator * fraction2.getDenominator()) + (fraction2.getNumerator() * denominator);
+        int bottom = denominator * fraction2.getDenominator();
+        String strTop = Integer.toString(top);
+        String strBottom = Integer.toString(bottom);
+        return strTop + '/' + strBottom;
     }
 
-    public String subtract() {
-
+    public String subtract(Fraction fraction2) {
+        int top = (numerator * fraction2.getDenominator()) - (fraction2.getNumerator() * denominator);
+        int bottom = denominator * fraction2.denominator();
+        String strTop = Integer.toString(top);
+        String strBottom = Integer.toString(bottom);
+        return strTop + '/' + strBottom;
     }
 
-    public String multiply() {
-
+    public String multiply(Fraction fraction2) {
+        int top = numerator * fraction2.getNumerator();
+        int bottom = denominator * fraction2.getDenominator();
+        String strTop = Integer.toString(top);
+        String strBottom = Integer.toString(bottom);
+        return strTop + '/' + strBottom;
     }
 
-    public String divide() {
-
-    }
-
-    public void test() {
-        System.out.println(numerator1);
-        System.out.println(denominator1);
-        System.out.println(numerator2);
-        System.out.println(denominator2);
+    public String divide(Fraction fraction2) {
+        int top = numerator * fraction2.getDenominator();
+        int bottom = denominator * fraction2.getNumerator();
+        String strTop = Integer.toString(top);
+        String strBottom = Integer.toString(bottom);
+        return strTop + '/' + strBottom;
     }
 
     public static void main(String[] args) {
         Fraction f = new Fraction(2, 5);
-        //System.out.println(f.test());
-        f.test();
-        //System.out.println(f.add);
-        System.out.println("Hello world");
+        Fraction g = new Fraction(4, 3);
+        System.out.println(f.add(g));
+        System.out.println("hello world");
     }
 }
-
-
