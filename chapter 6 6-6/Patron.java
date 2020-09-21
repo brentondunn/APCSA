@@ -1,9 +1,12 @@
 public class Patron {
     private String name;
-    private int bookCount;
+    // private int bookCount;
 
-    public Patron(String patronName, int numberOfBooks) {
+    public Patron(String patronName, /*int numberOfBooks*/) {
         name = patronName;
-        bookCount = numberOfBooks;
+        // bookCount = numberOfBooks;
     }
+
+    
+
 }
