@@ -1,6 +1,6 @@
 /*
 name: Brenton Dunn and Aman Kumar
-ID #: 218005 and 218xxx
+ID #: 218005 and 218059
 date of completion: 24/08/2020
 */
 
@@ -77,7 +77,7 @@ public class Fraction {
     // pg 228 citical thinking extra credit
     // brute force
     // for loop starts at 1 since 1 is the defaulf GCD
-    // checks if number i devides evenly into both numerator and denominator
+    // checks if number i devides evenly into both numerator and denominator using modulo
     // if it does, then it is stored in gcd then moves on to see if there is a higher one
     // if not, then i increases by 1 and it tests again 
     public int simplify(int n, int d) {
