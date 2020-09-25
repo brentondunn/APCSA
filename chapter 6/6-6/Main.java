@@ -1,3 +1,9 @@
+/*
+name: Brenton Dunn and Aman Kumar
+ID #: 218005 and 218059
+date of completion: 24/08/2020
+*/
+
 public class Main {
     public static void main(String[] args) {
         Patron p = new Patron("John");
