@@ -10,18 +10,21 @@ public class Patron {
         book2 = null;
         book3 = null;
     }
-/*
-    public boolean borrowBook(String title, String book) {
+
+    public boolean borrowBook(String title) {
         if (book1 == null) {
-            book1 = book;
+            book1 = title;
+            return true;
         } else if (book2 == null) {
-            book2 = book;
-        } else if (book3 = null) {
-            book3 = book;
+            book2 = title;
+            return true;
+        } else if (book3 == null) {
+            book3 = title;
+            return true;
         } else {
             return false;
         }
-    } */
+    } 
 
     public boolean isBorrowed(String title) {
         if (title.equals(book1) || title.equals(book2) || title.equals(book3)) {
