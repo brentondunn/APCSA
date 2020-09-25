@@ -34,14 +34,15 @@ public class Patron {
         }
     }
 
-    // logic error: if title does not match any of the three then book3 is erased
     public void returnBook(String title) {
         if (title.equals(book1)) {
             book1 = null;
         } else if (title.equals(book2)) {
             book2 = null;
-        } else {
+        } else if (title.equals(book3)){
             book3 = null;
+        } else {
+            System.out.println("Title is not borrowed.");
         }
     }
 
