@@ -78,7 +78,7 @@ public class Fraction {
     // brute force
     // for loop starts at 1 since 1 is the defaulf GCD
     // checks if number i devides evenly into both numerator and denominator using modulo
-    // if it does, then it is stored in gcd then moves on to see if there is a higher one
+    // if it does, then it is stored in gcd then i increases by 1 and it tests again to see if there is a higher common digit
     // if not, then i increases by 1 and it tests again 
     public int simplify(int n, int d) {
         int gcd = 1;
