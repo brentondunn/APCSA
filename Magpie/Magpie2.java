@@ -49,12 +49,12 @@ public class Magpie2{
 			response = "Do you like school?";
 		}else if (statement.indexOf("Sep") >= 0){
 			response = "Mr. Sep is the best!!";
-		} else if (statement.indexOf("Shawky") >= 0){
+		}else if (statement.indexOf("Shawky") >= 0){
 			response = "Mr. Shawky is the best!!";
-		}
-		else{
+		}else{
 			response = getRandomResponse();
 		}
+		
 		return response;
 	}
 
