@@ -15,8 +15,7 @@ public class Magpie3
 	 * 
 	 * @return a greeting
 	 */
-	public String getGreeting()
-	{
+	public String getGreeting(){
 		return "Hello, let's talk.";
 	}
 
@@ -27,23 +26,17 @@ public class Magpie3
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
-	{
+	public String getResponse(String statement){
 		String response = "";
 
-		if (statement.length() == 0)
-		{
+		if (statement.length() == 0){
 			response = "Say something, please.";
-		}
-		else if (findKeyword(statement, "no") >= 0)
-		{
+		}else if (findKeyword(statement, "no") >= 0){
 			response = "Why so negative?";
-		}
-		else if (findKeyword(statement, "mother") >= 0
+		}else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
-		{
+				|| findKeyword(statement, "brother") >= 0){
 			response = "Tell me more about your family.";
 		} else if (statement.indexOf("cat") != -1
 				|| statement.indexOf("dog") != -1) {
@@ -52,11 +45,10 @@ public class Magpie3
 			System.out.print("Mr. Sep is the best!");
 		}else if (statement.indexOf("Shawky") != -1) {
 			System.out.print("Mr. Shawky is the best!");
-		}
-		else
-		{
+		}else{
 			response = getRandomResponse();
 		}
+		
 		return response;
 	}
 
@@ -88,17 +80,14 @@ public class Magpie3
 
 		// Refinement--make sure the goal isn't part of a
 		// word
-		while (psn >= 0)
-		{
+		while (psn >= 0){
 			// Find the string of length 1 before and after
 			// the word
 			String before = " ", after = " ";
-			if (psn > 0)
-			{
+			if (psn > 0){
 				before = phrase.substring(psn - 1, psn);
 			}
-			if (psn + goal.length() < phrase.length())
-			{
+			if (psn + goal.length() < phrase.length()){
 				after = phrase.substring(
 						psn + goal.length(),
 						psn + goal.length() + 1);
@@ -110,8 +99,7 @@ public class Magpie3
 					.compareTo("z") > 0)) // before is not a
 											// letter
 					&& ((after.compareTo("a") < 0) || (after
-							.compareTo("z") > 0)))
-			{
+							.compareTo("z") > 0))){
 				return psn;
 			}
 
@@ -138,8 +126,7 @@ public class Magpie3
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal)
-	{
+	private int findKeyword(String statement, String goal){
 		return findKeyword(statement, goal, 0);
 	}
 
@@ -148,27 +135,19 @@ public class Magpie3
 	 * 
 	 * @return a non-committal string
 	 */
-	private String getRandomResponse()
-	{
+	private String getRandomResponse(){
 		final int NUMBER_OF_RESPONSES = 4;
 		double r = Math.random();
 		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
 		String response = "";
 
-		if (whichResponse == 0)
-		{
+		if (whichResponse == 0)	{
 			response = "Interesting, tell me more.";
-		}
-		else if (whichResponse == 1)
-		{
+		}else if (whichResponse == 1){
 			response = "Hmmm.";
-		}
-		else if (whichResponse == 2)
-		{
+		}else if (whichResponse == 2){
 			response = "Do you really think so?";
-		}
-		else if (whichResponse == 3)
-		{
+		}else if (whichResponse == 3){
 			response = "You don't say.";
 		}
 
