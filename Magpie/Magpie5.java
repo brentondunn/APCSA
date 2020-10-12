@@ -12,14 +12,12 @@ import java.util.Random;
  * @author Laurie White
  * @version April 2012
  */
-public class Magpie5
-{
+public class Magpie5{
 	/**
 	 * Get a default greeting 	
 	 * @return a greeting
 	 */	
-	public String getGreeting()
-	{
+	public String getGreeting(){
 		return "Hello, let's talk.";
 	}
 	
@@ -30,63 +28,42 @@ public class Magpie5
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
-	{
+	public String getResponse(String statement){
 		String response = "";
-		if (statement.length() == 0)
-		{
+		if (statement.length() == 0){
 			response = "Say something, please.";
-		}
-
-		else if (findKeyword(statement, "no") >= 0)
-		{
+		}else if (findKeyword(statement, "no") >= 0){
 			response = "Why so negative?";
-		}
-		else if (findKeyword(statement, "mother") >= 0
+		}else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
-		{
+				|| findKeyword(statement, "brother") >= 0){
 			response = "Tell me more about your family.";
 		}
 
 		// Responses which require transformations
-		else if (findKeyword(statement, "I want to", 0) >= 0)
-		{
+		else if (findKeyword(statement, "I want to", 0) >= 0){
 			response = transformIWantToStatement(statement);
 		}
 		//  Part of student solution
-		else if (findKeyword(statement, "I want", 0) >= 0)
-		{
+		else if (findKeyword(statement, "I want", 0) >= 0){
 			response = transformIWantStatement(statement);
-		}
-
-		else
-		{
-
+		}else{
 			// Look for a two word (you <something> me)
 			// pattern
 			int psn = findKeyword(statement, "you", 0);
 
-			if (psn >= 0
-					&& findKeyword(statement, "me", psn) >= 0)
-			{
+			if (psn >= 0 && findKeyword(statement, "me", psn) >= 0){
 				response = transformYouMeStatement(statement);
-			}
-			else
-			{
+			}else{
 				//  Part of student solution
 				// Look for a two word (I <something> you)
 				// pattern
 				psn = findKeyword(statement, "i", 0);
 
-				if (psn >= 0
-						&& findKeyword(statement, "you", psn) >= 0)
-				{
+				if (psn >= 0 && findKeyword(statement, "you", psn) >= 0){
 					response = transformIYouStatement(statement);
-				}
-				else
-				{
+				}else{
 					response = getRandomResponse();
 				}
 			}
@@ -100,14 +77,12 @@ public class Magpie5
 	 * @param statement the user statement, assumed to contain "I want to"
 	 * @return the transformed statement
 	 */
-	private String transformIWantToStatement(String statement)
-	{
+	private String transformIWantToStatement(String statement){
 		//  Remove the final period, if there is one
 		statement = statement.trim();
 		String lastChar = statement.substring(statement
 				.length() - 1);
-		if (lastChar.equals("."))
-		{
+		if (lastChar.equals(".")){
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
@@ -123,14 +98,12 @@ public class Magpie5
 	 * @param statement the user statement, assumed to contain "I want"
 	 * @return the transformed statement
 	 */
-	private String transformIWantStatement(String statement)
-	{
+	private String transformIWantStatement(String statement){
 		//  Remove the final period, if there is one
 		statement = statement.trim();
 		String lastChar = statement.substring(statement
 				.length() - 1);
-		if (lastChar.equals("."))
-		{
+		if (lastChar.equals(".")){
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
@@ -145,14 +118,12 @@ public class Magpie5
 	 * @param statement the user statement, assumed to contain "you" followed by "me"
 	 * @return the transformed statement
 	 */
-	private String transformYouMeStatement(String statement)
-	{
+	private String transformYouMeStatement(String statement){
 		//  Remove the final period, if there is one
 		statement = statement.trim();
 		String lastChar = statement.substring(statement
 				.length() - 1);
-		if (lastChar.equals("."))
-		{
+		if (lastChar.equals(".")){
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
@@ -170,14 +141,12 @@ public class Magpie5
 	 * @param statement the user statement, assumed to contain "I" followed by "you"
 	 * @return the transformed statement
 	 */
-	private String transformIYouStatement(String statement)
-	{
+	private String transformIYouStatement(String statement){
 		//  Remove the final period, if there is one
 		statement = statement.trim();
 		String lastChar = statement.substring(statement
 				.length() - 1);
-		if (lastChar.equals("."))
-		{
+		if (lastChar.equals(".")){
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
@@ -208,9 +177,7 @@ public class Magpie5
 	 * @return the index of the first occurrence of goal in
 	 *         statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal,
-			int startPos)
-	{
+	private int findKeyword(String statement, String goal,int startPos){
 		String phrase = statement.trim().toLowerCase();
 		goal = goal.toLowerCase();
 
@@ -220,17 +187,14 @@ public class Magpie5
 
 		// Refinement--make sure the goal isn't part of a
 		// word
-		while (psn >= 0)
-		{
+		while (psn >= 0){
 			// Find the string of length 1 before and after
 			// the word
 			String before = " ", after = " ";
-			if (psn > 0)
-			{
+			if (psn > 0){
 				before = phrase.substring(psn - 1, psn);
 			}
-			if (psn + goal.length() < phrase.length())
-			{
+			if (psn + goal.length() < phrase.length()){
 				after = phrase.substring(
 						psn + goal.length(),
 						psn + goal.length() + 1);
@@ -242,8 +206,7 @@ public class Magpie5
 					.compareTo("z") > 0)) // before is not a
 											// letter
 					&& ((after.compareTo("a") < 0) || (after
-							.compareTo("z") > 0)))
-			{
+							.compareTo("z") > 0)))	{
 				return psn;
 			}
 
@@ -264,8 +227,7 @@ public class Magpie5
 	 * @param goal the string to search for
 	 * @return the index of the first occurrence of goal in statement or -1 if it's not found
 	 */
-	private int findKeyword(String statement, String goal)
-	{
+	private int findKeyword(String statement, String goal){
 		return findKeyword (statement, goal, 0);
 	}
 	
@@ -275,8 +237,7 @@ public class Magpie5
 	 * Pick a default response to use if nothing else fits.
 	 * @return a non-committal string
 	 */
-	private String getRandomResponse ()
-	{
+	private String getRandomResponse (){
 		Random r = new Random ();
 		return randomResponses [r.nextInt(randomResponses.length)];
 	}
