@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 /**
+ * names: Brenton Dunn/Isaias Tamayo
+ * IDs: 218005/218055
+ * date of completion: 10-12-2020
+ * ----------------------------------------------------------
  * A simple class to run the Magpie class.
  * @author Laurie White
  * @version April 2012
