@@ -1,6 +1,10 @@
 import java.util.Random;
 
 /**
+ * names: Brenton Dunn/Isaias Tamayo
+ * IDs: 218005/218055
+ * date of completion: 10-12-2020
+ * ----------------------------------------------------------
  * A program to carry on conversations with a human user.
  * This version:
  *<ul><li>
