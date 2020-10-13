@@ -1,4 +1,8 @@
 /**
+ * names: Brenton Dunn/Isaias Tamayo
+ * IDs: 218005/218055
+ * date of completion: 10-12-2020
+ * ----------------------------------------------------------
  * A program to allow students to try out different 
  * String methods. 
  * @author Laurie White
