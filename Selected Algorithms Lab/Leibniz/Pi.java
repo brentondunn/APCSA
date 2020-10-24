@@ -12,11 +12,11 @@ public class Pi {
 
         // get user input on # of iterations
         Scanner number = new Scanner(System.in);
-        System.out.println("How many iterations would you like? ");
+        System.out.print("How many iterations would you like? ");
         int iterations = number.nextInt();
         
         // iterates the specified # of times
-        for (int i = 0; i < iterations; i++) {
+        for (int i=0; i < iterations; i++) {
             
             // decides whether to add or subtract the number by looking at the number of times it has already iterated 
             if (i % 2 == 0) {
