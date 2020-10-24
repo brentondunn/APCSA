@@ -4,32 +4,38 @@
 
 import java.util.Scanner;
 
-public class Pi {
+public class Fibonacci {
     public static void main(String[] args) {
-
-        int denominator = 1;
-        double finalNum = 0;
-
-        // get user input on # of iterations
-        Scanner number = new Scanner(System.in);
-        System.out.print("How many iterations would you like? ");
-        int iterations = number.nextInt();
         
-        // iterates the specified # of times
-        for (int i=0; i < iterations; i++) {
+        int tempStore;
+        int num1 = 1;
+        int num2 = 1;
+        String finalNum = "";
+        
+        // get user input for #
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Number: ");
+        int num = scan.nextInt();
+        
+        // loops and adds a new fibonacci # onto the end of the string each iteration
+        for (int i=0; i < num; i++) {
             
-            // decides whether to add or subtract the number by looking at the number of times it has already iterated 
-            if (i % 2 == 0) {
-                finalNum += 1 / (double) denominator;
+            // if it is the 1st or 2nd iteration, the number 1 is is attached to the final string
+            if (i < 2) {
+                finalNum += " " + 1;
             } else {
-                finalNum -= 1/ (double) denominator;
+                
+                // adds each number onto the end of the string
+                finalNum += " " + (num1 + num2);
+                
+                // num1 stores num2 and num2 stores num1 + num2
+                tempStore = num1;
+                num1 = num2;
+                num2 += tempStore;
             }
+        }
 
-            // prints the numbere each iteration
-            System.out.println(finalNum * 4);
-
-            // adds 2 to the denominator each iteration
-            denominator += 2;
-        }        
+        // final output
+        System.out.println("Fibonacci numbers:" + finalNum);
     }
 }
