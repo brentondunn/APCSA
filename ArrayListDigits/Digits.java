@@ -19,7 +19,7 @@ public class Digits {
        // Use a while loop to add each digit in number to digitList
         while (number > 0) { 
             digitList.add(number%10);
-            number = number/10;
+            number /= 10;
         }
         
        //Use Collections.reverse(digitList); to reverse the digits
