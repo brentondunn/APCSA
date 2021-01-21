@@ -1,3 +1,11 @@
+/**
+* Digits.java
+* @author Brenton Dunn / 218005
+* @since 21 January 2021
+* @version 1.0
+*/
+
+
 import java.util.*;
 
 public class Digits { 
